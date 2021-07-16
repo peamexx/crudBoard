@@ -1,0 +1,131 @@
+// import scss
+@import './reset';
+
+// import font
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+// common
+.show {
+    display: block !important;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #5C6BC0;
+    position: relative;
+    .container {
+        width: 800px;
+        padding: 30px;
+        border-radius: 3px;
+        background-color: #E8EAF6;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .row {
+            &:nth-child(3) {
+                height: 310px;
+                overflow: hidden;
+                overflow-y: auto;
+            }
+            &::-webkit-scrollbar {
+                width: 3px;
+                background-color: #C5CAE9;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #283593;
+            }
+        }
+        form {
+            margin: auto;
+            input {
+                width: 50%;
+                margin-bottom: 10px;
+                padding: 10px 15px;
+                border: 0;
+                &.inpId {
+                    width: 100%;
+                }
+                &.inpAge {
+                    margin-bottom: 0;
+                }
+                &::placeholder {
+                    color: #C5CAE9;
+                }
+            }
+        }
+        .btnArea {
+            margin-top: 20px;
+            button {
+                width: 150px;
+                margin-top: 10px;
+                margin-right: 10px;
+                padding: 10px 20px;
+                border-radius: 4px;
+                background-color: #283593;
+                color: #fff;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        table {
+            width: 700px;
+            margin-top: 20px;
+            tr {
+                border: 1px solid #C5CAE9;
+                text-align: center;
+            }
+            th,
+            td {
+                padding: 10px 0;
+                border-right: 1px solid #C5CAE9;
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+            th {
+                background-color: #C5CAE9;
+                border-right: 1px solid #E8EAF6;
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+            .totalCntA {
+                font: {
+                    weight: bold;
+                }
+            }
+        }
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.active {
+                    a {
+                        background-color: #283593;
+                        color: #fff;
+                    }
+                }
+                a {
+                    display: block;
+                    padding: 3px 10px;
+                    border-radius: 4px;
+                    color: #333;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
