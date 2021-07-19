@@ -1,4 +1,4 @@
-import DATA from './db.js';
+import DATA from '../../db.js';
 
 // tag
 const tbody = document.querySelector('tbody');
