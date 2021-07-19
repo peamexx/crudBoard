@@ -49,23 +49,22 @@
         form {
             margin: auto;
             input {
-                width: 50%;
-                margin-bottom: 10px;
+                width: 33%;
                 padding: 10px 15px;
                 border: 0;
-                &.inpId {
-                    width: 100%;
-                }
-                &.inpAge {
-                    margin-bottom: 0;
-                }
                 &::placeholder {
                     color: #C5CAE9;
+                }
+                &.inpName,
+                &.inpHobby {
+                    &::placeholder {
+                        color: #5C6BC0;
+                    }
                 }
             }
         }
         .btnArea {
-            // margin-top: 20px;
+            margin-top: 10px;
             button {
                 width: 150px;
                 margin-top: 10px;
