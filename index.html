@@ -16,12 +16,20 @@
                 <form action="">
                     <input type="text" class="inpId" placeholder="id" readonly>
                     <input type="text" class="inpName" placeholder="name">
-                    <input type="text" class="inpAge"placeholder="age">
+                    <input type="text" class="inpHobby"placeholder="hobby">
                     <div class="btnArea">
                         <button onclick="window.location.reload()">새로고침</button>
                         <button class="btnRead">불러오기</button>
                     </div>
                 </form>
+            </div>
+            <div class="row">
+                <select name="" id="">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+                <p>총 <span class="totalCntA"></span>개의 게시물이 있습니다.</p>
             </div>
             <div class="row">
                 <table>
@@ -31,9 +39,6 @@
                         <col width="40%">
                     </colgroup>
                     <thead>
-                        <tr>
-                            <td colspan="3">총 <span class="totalCntA"></span>개의 게시물이 있습니다.</td>
-                        </tr>
                         <tr>
                             <th>id</th>
                             <th>name</th>
