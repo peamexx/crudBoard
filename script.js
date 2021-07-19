@@ -67,8 +67,11 @@ function loadD(e) {
     let startIdx = Number(((perCnt * selected) - perCnt));
     let endIdx = Number(((perCnt * selected) - 1));
 
-    tbody.querySelectorAll('tr').forEach((el) => el.remove()); // 게시물 전체 삭제
-    pagination.querySelectorAll('li').forEach((el) => el.classList.remove('active'));  // 페이징 .active 삭제
+    // 행여나 페이징 클릭 시 미묘하게 a태그 말고 다른거 클릭하는거 방지
+    if(target.closest('li') || target.closest('select')) {
+        tbody.querySelectorAll('tr').forEach((el) => el.remove()); // 게시물 전체 삭제
+        pagination.querySelectorAll('li').forEach((el) => el.classList.remove('active'));  // 페이징 .active 삭제
+    }
     
     if(target.closest('li')) { // 페이징 클릭 시
         target.closest('li').classList.add('active'); // 선택된 페이징에 .active 추가
