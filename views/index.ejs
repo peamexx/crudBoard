@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document : ejs</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script defer src="/js/script.js" type="module"></script>
+    <script defer type="module" src="/js/script.js"></script>
 </head>
 <body>
     <div class="wrap">
         <div class="container">
             <h1>게시판</h1>
             <div class="row">
-                <form action="">
-                    <input type="text" class="inpId" placeholder="id" readonly>
-                    <input type="text" class="inpName" placeholder="name (입력 필수)">
-                    <input type="text" class="inpHobby"placeholder="hobby (입력 필수)">
+                <form action="/add" method="POST">
+                    <input type="text" name="userid" class="inpId" placeholder="id" readonly>
+                    <input type="text" name="username" class="inpName" placeholder="name (입력 필수)">
+                    <input type="text" name="hobby" class="inpHobby"placeholder="hobby (입력 필수)">
                     <div class="btnArea">
                         <button onclick="window.location.reload()">새로고침</button>
-                        <button class="btnRead">추가하기</button>
+                        <button type="submit" class="btnRead">추가하기</button>
                     </div>
                 </form>
             </div>
@@ -29,7 +29,7 @@
                     <option value="10">10</option>
                     <option value="20">20</option>
                 </select>
-                <p>총 <span class="totalCntA"></span>개의 게시물이 있습니다.</p>
+                <p>총 <span class="totalCntA"><%= DATA.length %></span>개의 게시물이 있습니다.</p>
             </div>
             <div class="row">
                 <table>
@@ -45,7 +45,15 @@
                             <th>hobby</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <%DATA.forEach((el) => {%>
+                            <tr>
+                                <td><%= el.userid %></td>
+                                <td><%= el.username %></td>
+                                <td><%= el.hobby %></td>
+                            </tr>
+                        <%})%>
+                    </tbody>
                 </table>
             </div>
             <div class="row">
