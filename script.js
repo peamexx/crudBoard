@@ -5,9 +5,9 @@ const tbody = document.querySelector('tbody');
 const pagination = document.querySelector('.pagination');
 
 // input
-const id = document.querySelector('inpId');
-const username = document.querySelector('inpName');
-const hobby = document.querySelector('inpHobby');
+const id = document.querySelector('.inpId');
+const username = document.querySelector('.inpName');
+const hobby = document.querySelector('.inpHobby');
 
 // select
 const select = document.querySelector('select');
@@ -24,6 +24,8 @@ window.addEventListener('load', createPagi);
 pagination.addEventListener('click', loadD);
 btnRead.addEventListener('click', readD);
 select.addEventListener('change', changePerCnt);
+tbody.addEventListener('click', enterAuto);
+
 
 // read
 document.querySelector('.totalCntA').textContent = totalCnt;
@@ -111,4 +113,14 @@ function appendData(perCnt, startIdx, endIdx) {
             tbody.append(tr);
         }
     });
+};
+
+// 게시물 클릭 시 input에 자동으로 써줌
+function enterAuto(e) {
+    let target = e.target;
+    let mother = target.closest('tr');
+
+    id.value = mother.querySelectorAll('td')[0].textContent;
+    username.value = mother.querySelectorAll('td')[1].textContent;
+    hobby.value = mother.querySelectorAll('td')[2].textContent;
 };
